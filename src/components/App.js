@@ -1,10 +1,36 @@
 import React, { Component } from 'react';
-import logo from '../css/images/logo.svg';
+import base from '../base';
+import Search from './Search';
+import Trail from './Trail';
 import '../css/App.css';
 import { Grid, Navbar, Jumbotron, Button } from 'react-bootstrap';
 
 class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      data: {},
+      filterBy: ''
+    }
+  }
+
+  componentWillMount() {
+    // this runs right before the <App> is rendered
+    this.ref = base.syncState('data', {
+      context: this,
+      state: 'data'
+    });
+  }
+
+  updateFilter = (event) => {
+    this.setState({filterBy: event.target.value});
+  }
+
   render() {
+    const { trails, updates, users } = this.state.data;
+
     return (
       <div>
         <Navbar inverse fixedTop>
@@ -31,6 +57,29 @@ class App extends Component {
             </p>
           </Grid>
         </Jumbotron>
+
+        <Search filterBy={this.state.filterBy} callback={this.updateFilter}/>
+
+            {JSON.stringify(trails)}
+            {JSON.stringify(updates)}
+            {JSON.stringify(users)}
+
+      {
+        trails && 
+        trails
+        .filter(trail => ~trail.name.toUpperCase().indexOf(this.state.filterBy.toUpperCase()))
+        .map(trail => 
+            <Trail 
+              key={trail.id} 
+              details={trail}
+              updates={
+                        updates
+                          .filter(item => item.trail_id === trail.id)
+                          .sort((a, b) => b.timestamp - a.timestamp)
+                      } 
+            />)
+      }
+
       </div>
     );
   }
