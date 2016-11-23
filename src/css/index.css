@@ -1,5 +1,145 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Open Sans";
+  font-size: 18px;
+  background: #D0E5A2;
+}
+
+.logo {
+  background-image: url('./images/trail-finder.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 200px;
+  margin: auto;
+}
+
+.search-box {
+  margin: 0 0 20px 0;
+  padding: 5px;
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 22px;
+}
+
+.trail-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  background: #F9906F;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.update {
+  padding: 5px;
+}
+
+.trail-description {
+  margin-top: 5px;
+}
+
+.trail-status {
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  width: 60px;
+  border-radius: 5px;
+}
+
+.trail-status.open {
+  background: #7FB800;
+}
+
+.trail-status.closed {
+  background: red;
+}
+
+.add-update {
+  padding-top: 20px;
+}
+
+.add-update p {
+  font-weight: bold;
+}
+
+.add-update .status input[type="radio"] {
+  margin-right: 5px;
+}
+
+.add-update .status input[type="radio"]:nth-child(2) {
+  margin-left: 15px;
+}
+
+.detail-links {
+  margin: 10px 0 20px 0;
+}
+
+.detail-links li {
+  margin-left: 10px;
+}
+
+.likes, .likes a:hover {
+   color: #fff;
+   text-decoration: none;
+}
+
+
+.likes-heart {
+  background: url("http://f.cl.ly/items/3Y373q2Q3J3Y1j203n0m/Bitmap-3.png") center no-repeat;
+  background-size: contain;
+  font-size: 2rem;
+  padding: 1rem;
+  margin-left: 10px;
+  color: #00f;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+
+.likes-heart {
+  opacity: 0;
+  transition: all 0.5s;
+  transform: translateX(-50%) translateY(-50%) scale(5);
+  display: block;
+}
+
+.likes-heart.like-enter {
+  transition: all 0.2s;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+  opacity: 1;
+}
+
+.likes-heart.like-enter.like-enter-active {
+  transform: translateX(-50%) translateY(-50%) scale(5);
+}
+
+.likes-heart .like-leave-active {
+  display: none;
+}
+
+.google-maps {
+  position: relative;
+  padding-bottom: 75%; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+
+.google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.footer {
+  height: 50px;
+  background-color: grey;
+  color: white;
+  padding: 10px;
 }

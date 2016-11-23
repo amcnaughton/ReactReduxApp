@@ -3,11 +3,12 @@ import React from 'react';
 class Search extends React.Component {
 
   render() {
-    console.log(this.props)
-    return (
+   return (
       <div>
         <input
-          type="text"
+          className="search-box"
+          type="search"
+          placeholder="Search..."
           value={this.props.filterBy}
           onChange={this.props.callback}
         />
