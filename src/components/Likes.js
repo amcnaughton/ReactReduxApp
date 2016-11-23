@@ -9,7 +9,7 @@ class Likes extends React.Component {
     return (
         <span>
           <CSSTransitionGroup transitionName="like" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
-            <span key={trailId} className="likes-heart">{trail.likes}</span>
+            <span key={trail.likes} className="likes-heart">{trail.likes}</span>
           </CSSTransitionGroup>
 					<a onClick={() => increment(trailId)} className="likes">&hearts; {trail.likes}</a>
         </span>
