@@ -1,17 +1,61 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans";
-  font-size: 18px;
-  background: #D0E5A2;
+  font-family: "Raleway";
+  font-size: 22px;
+  background: #3b4f5a;
+  color: #fff;
+}
+
+.table {
+  display: table;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.vtop {
+  vertical-align: top;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.lightgrey {
+  background: #718087;
+} 
+
+.darkgrey {
+  background: #213037;
+}
+
+.grey {
+  background: #3b4f5a;
+}
+
+.open {
+  background: #5db956;
+}
+
+.closed {
+  background: #f14e61;
 }
 
 .logo {
-  background-image: url('./images/trail-finder.png');
+  background-image: url('./images/trailfinder-logo.png');
   background-repeat: no-repeat;
   background-size: contain;
-  height: 200px;
-  margin: auto;
+  height: 112px;
+  width: 300px;
+  margin: 10px auto 10px auto;
 }
 
 .search-box {
@@ -24,12 +68,10 @@ body {
 }
 
 .trail-header {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 26px;
   color: white;
-  background: #F9906F;
-  padding: 5px;
-  border-radius: 5px;
+  background: #5db956;
+  padding: 10px 10px 10px 20px;
 }
 
 .trail-image {
@@ -43,30 +85,51 @@ body {
   border-radius: 5px;
 }
 
-.update {
-  padding: 5px;
-}
-
 .trail-description {
-  margin-top: 5px;
+  padding: 10px 10px 10px 20px;
+  background: #718087;
 }
 
-.trail-status {
+.update {
+  padding: 0;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.update .status-cell {
+  background: #213037;
+  width: 150px;
+  vertical-align: middle;
+}
+
+.update .comment-cell {
+  background: #718087;
+  vertical-align: top;
+  padding: 5px 5px 5px 10px;
+}
+
+.update .marker {
+  width: 5px;
+  height: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+
+.update .status {
+  font-size: 21px;
   font-weight: bold;
-  font-size: 15px;
   color: #fff;
   text-align: center;
+  width: 100px;
   padding: 5px;
-  width: 60px;
   border-radius: 5px;
+  float: left;
+  margin: 25px;
 }
 
-.trail-status.open {
-  background: #7FB800;
-}
-
-.trail-status.closed {
-  background: red;
+.update .comment {
+  display: table;
 }
 
 .add-update {
@@ -93,16 +156,25 @@ body {
   margin-left: 10px;
 }
 
+.likes-wrapper {
+  margin-left: 10px;
+}
+
 .likes,
 .likes a:hover {
   color: #fff;
   text-decoration: none;
+  font-size: 29px;
+}
+
+.likes-count {
+  font-size: 26px;
 }
 
 .likes-heart {
   background: url("http://f.cl.ly/items/3Y373q2Q3J3Y1j203n0m/Bitmap-3.png") center no-repeat;
   background-size: contain;
-  font-size: 2rem;
+  font-size: 22px;
   padding: 1rem;
   position: absolute;
   color: #00f;
@@ -110,20 +182,24 @@ body {
   top: 50%;
   pointer-events: none;
 }
+
 .likes-heart {
   opacity: 0;
   transition: all 0.5s;
   transform: translateX(-50%) translateY(-50%) scale(5);
   display: block;
 }
+
 .likes-heart.like-enter {
   transition: all 0.2s;
   transform: translateX(-50%) translateY(-50%) scale(1);
   opacity: 1;
 }
+
 .likes-heart.like-enter.like-enter-active {
   transform: translateX(-50%) translateY(-50%) scale(5);
 }
+
 .likes-heart .like-leave-active {
   display: none;
 }

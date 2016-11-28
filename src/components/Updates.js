@@ -6,18 +6,23 @@ import { getTrailUpdates } from '../common.js';
 class Updates extends React.Component {
 
   renderUpdate(update, i) {
+
     return (
-      <div className="row update" key={i}>
-        <div>
-          <div className="col-xs-2">
-            <div className={`trail-status ${update.status}`}>{update.status === "open" ? "Open" : "Closed"}</div>
+      <div className="table update" key={i}>
+        <div className="table-row">
+
+          <div className={`table-cell ${update.status}`}>
+            <div className={`marker ${update.status}`} />
           </div>
-          <div className="col-xs-8">
-            <div className="comment">{update.comment}</div>
+
+          <div className="table-cell status-cell">
+              <div className={`status ${update.status}`}>{update.status === "open" ? "Open" : "Closed"}</div>
           </div>
-          <div className="col-xs-2">
-            <div className="user">USERPHOTO<br/>name</div>
+
+          <div className="table-cell comment-cell">
+              <div className="comment">{update.comment}</div>
           </div>
+
         </div>
       </div>
     )
