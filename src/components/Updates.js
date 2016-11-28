@@ -11,9 +11,7 @@ class Updates extends React.Component {
       <div className="table update" key={i}>
         <div className="table-row">
 
-          <div className={`table-cell ${update.status}`}>
-            <div className={`marker ${update.status}`} />
-          </div>
+          <div className={`table-cell marker-cell ${update.status}`}/>
 
           <div className="table-cell status-cell">
               <div className={`status ${update.status}`}>{update.status === "open" ? "Open" : "Closed"}</div>
@@ -34,8 +32,8 @@ class Updates extends React.Component {
 
     return (
       <div className="updates">
-        {updates.map(this.renderUpdate)}
         {!hideForm && <AddUpdate trailId={trailId} {...this.props}/>}
+        {updates.map(this.renderUpdate)}
       </div>
     )
   }
