@@ -22,7 +22,7 @@ class TrailDetail extends React.Component {
 				</div>
       	<div className="trail-description">{trail.description}</div>
       	<Updates trailId={trailId} {...this.props}/>
-				<Link to='/'>Back</Link>
+				<Link to='/'><div className="back-button"/></Link>
 				<Map location={trail.location}/>
       </div>
     );
