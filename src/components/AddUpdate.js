@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { RadioGroup, Radio } from 'react-radio-group';
-
 /**
  * Allow user to update trail status and add comment
  * 
@@ -15,16 +13,16 @@ class AddUpdate extends React.Component {
 
     // initialize trail status radio button
     this.state = {
-      selectedStatus: ''
+      selectedStatus: 'open'
     };
   }
 
-  // update trail status
-  handleChange = (value) => {
+  handleStatusChange = (changeEvent) => {
+    console.log('STATUSCHANGE', changeEvent.target.value)
     this.setState({
-      selectedStatus: value
+      selectedStatus: changeEvent.target.value
     });
-  }
+  } 
 
   // submit update to Redux
   handleSubmit = (e) => {
@@ -43,7 +41,7 @@ class AddUpdate extends React.Component {
 
     // clear trail status
     this.setState({
-      selectedStatus: ''
+      selectedStatus: 'open'
     });
   }
 
@@ -54,16 +52,22 @@ class AddUpdate extends React.Component {
       <div>
         <form ref="updateForm" className="add-update" onSubmit={this.handleSubmit}>
           <p>Update Trail Status</p>
+
           <input type="hidden" ref="trail" defaultValue={trailId} />
           <input type="text" ref="user" placeholder="user" defaultValue="allan" />
           <input className="comment" type="text" ref="update" placeholder="How's the trail look?" />
-          <div>
-            <RadioGroup className="status" name="status" selectedValue={this.state.selectedStatus} onChange={this.handleChange}>
-              <Radio value="open" />Open
-              <Radio value="closed" />Closed
-            </RadioGroup>
+
+          <div className="button-bar">
+            <div className="switch">
+              <input type="radio" className="switch-input" name="status" value="open" id="open" defaultChecked onChange={this.handleStatusChange} />
+              <label htmlFor="open" className="switch-label switch-label-off">Open</label>
+              <input type="radio" className="switch-input" name="status" value="closed" id="closed" onChange={this.handleStatusChange} />
+              <label htmlFor="closed" className="switch-label switch-label-on">Closed</label>
+              <span className="switch-selection"></span>
+            </div>
+
+            <button name="submit" className="submit">Submit</button>
           </div>
-          <button name="submit" className="submit">Submit</button>
         </form>
       </div>
     )
