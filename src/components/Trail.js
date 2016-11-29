@@ -10,20 +10,34 @@ class Trail extends React.Component {
 		const {trail} = this.props;
 
 		return (
-			<div>	
+			<div className="clearfix trail-summary">	
 				<div className="trail-header">
 					{trail.name}
 					<Likes trailId={+trail.id} trail={trail} increment={this.props.increment}/>
+					<Link to={`/trail/${trail.id}`}><span className="details-button"/></Link>
+				</div>
+			  <div className="trail-image">
+					<Link to={`/trail/${trail.id}`}>
+						<img src={`/files/${trail.image}`}/>	
+					</Link>
 				</div>
 				<div className="trail-description">{trail.description}</div>
+
       	<Updates trailId={String(trail.id)} count={1} hideForm={true} {...this.props}/>
-				<div className="text-center">
-					<ul className="list-inline detail-links">
-						<li><Link to={`/trail/${trail.id}`}>Update Status</Link></li>
-						<li><Link to={`/trail/${trail.id}`}>Details</Link></li>
-						<li><Link to={`/trail/${trail.id}`}>Directions</Link></li>
-					</ul>
+
+				<div className="link-panel">
+					<div className="update-link">
+						<Link to={`/trail/${trail.id}`}>
+							<div className="update-button"/><span>Update Status</span>
+						</Link>
+					</div>
+					<div className="directions-link">
+						<Link to={`/trail/${trail.id}`}>
+							<div className="directions-button"/>Directions
+						</Link>
+					</div>
 				</div>
+
 			</div>
 		)
 	}
