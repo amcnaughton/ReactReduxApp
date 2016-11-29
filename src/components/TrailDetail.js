@@ -20,6 +20,9 @@ class TrailDetail extends React.Component {
 					{trail.name} 
 					<Likes trailId={+trailId} trail={trail} increment={this.props.increment}/>
 				</div>
+			  <div className="trail-image">
+					<img src={`/files/${trail.image}`}/>	
+				</div>
       	<div className="trail-description">{trail.description}</div>
       	<Updates trailId={trailId} {...this.props}/>
 				<Link to='/'><div className="back-button"/></Link>
