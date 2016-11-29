@@ -17,8 +17,8 @@ class AddUpdate extends React.Component {
     };
   }
 
+  // user changed trail status
   handleStatusChange = (changeEvent) => {
-    console.log('STATUSCHANGE', changeEvent.target.value)
     this.setState({
       selectedStatus: changeEvent.target.value
     });
@@ -49,26 +49,30 @@ class AddUpdate extends React.Component {
     const {trailId} = this.props;
 
     return (
-      <div>
-        <form ref="updateForm" className="add-update" onSubmit={this.handleSubmit}>
-          <p>Update Trail Status</p>
+      <div className="table add-update-wrapper">
+        <div className="table-row">
 
-          <input type="hidden" ref="trail" defaultValue={trailId} />
-          <input type="text" ref="user" placeholder="user" defaultValue="allan" />
-          <input className="comment" type="text" ref="update" placeholder="How's the trail look?" />
+          <div className={`table-cell marker-cell ${this.state.selectedStatus}`}/>
 
-          <div className="button-bar">
-            <div className="switch">
-              <input type="radio" className="switch-input" name="status" value="open" id="open" defaultChecked onChange={this.handleStatusChange} />
-              <label htmlFor="open" className="switch-label switch-label-off">Open</label>
-              <input type="radio" className="switch-input" name="status" value="closed" id="closed" onChange={this.handleStatusChange} />
-              <label htmlFor="closed" className="switch-label switch-label-on">Closed</label>
-              <span className="switch-selection"></span>
+          <form ref="updateForm" className="table-cell add-update" onSubmit={this.handleSubmit}>
+            <p>Update Trail Status</p>
+
+            <input type="hidden" ref="trail" defaultValue={trailId} />
+            <input type="hidden" ref="user" placeholder="user" defaultValue="allan" />
+            <input className="comment" type="text" ref="update" placeholder="How's the trail look?" />
+
+            <div className="button-bar">
+              <div className="switch">
+                <input type="radio" className="switch-input" name="status" value="open" id="open" defaultChecked onChange={this.handleStatusChange} />
+                <label htmlFor="open" className="switch-label switch-label-off">Open</label>
+                <input type="radio" className="switch-input" name="status" value="closed" id="closed" onChange={this.handleStatusChange} />
+                <label htmlFor="closed" className="switch-label switch-label-on">Closed</label>
+                <span className="switch-selection"></span>
+              </div>
+              <button name="submit" className="submit">Submit</button>
             </div>
-
-            <button name="submit" className="submit">Submit</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     )
   }
