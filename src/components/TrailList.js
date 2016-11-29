@@ -23,7 +23,6 @@ class TrailList extends Component {
     const { trails, updates, users } = this.props;
 
     return (
-      <Grid>
         <div>
           <Search {...this.props} filterBy={this.state.filterBy} callback={this.updateFilter}/>
           {
@@ -32,7 +31,6 @@ class TrailList extends Component {
             .map(trail => <Trail key={trail.id} trail={trail} {...this.props}/>)
           }
         </div>
-      </Grid>
 
 
     );
