@@ -55,7 +55,7 @@ Updates.propTypes = {
 }
 
 Updates.defaultProps = {
-  count: 10,
+  count: 6,
   hideForm: false
 }
 
