@@ -3,7 +3,7 @@ import React from 'react';
 import * as moment from 'moment';
 
 import AddUpdate from './AddUpdate.js';
-import { getTrailUpdates } from '../common.js';
+import { getTrailUpdates, truncate } from '../common.js';
 
 class Updates extends React.Component {
 
@@ -22,7 +22,7 @@ class Updates extends React.Component {
           </div>
 
           <div className="table-cell comment-cell">
-              <div className="comment">{update.comment}
+              <div className="comment">{truncate(update.comment, 50)}
                 <div className="author">
                   {user.name} {timestamp.format("MM/DD/YY, h:mm a")}
                 </div>
