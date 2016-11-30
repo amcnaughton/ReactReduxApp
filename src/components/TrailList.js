@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
+
 import Trail from './Trail';
 import Search from './Search';
-
-import { Grid } from 'react-bootstrap';
 
 class TrailList extends Component {
 
@@ -21,14 +20,18 @@ class TrailList extends Component {
 
   render() {
     const { trails, updates, users } = this.props;
+    const searchResults = trails.filter(trail => ~trail.name.toUpperCase().indexOf(this.state.filterBy.toUpperCase()));
 
     return (
         <div>
           <Search {...this.props} filterBy={this.state.filterBy} callback={this.updateFilter}/>
           {
-            trails
-            .filter(trail => ~trail.name.toUpperCase().indexOf(this.state.filterBy.toUpperCase()))
-            .map(trail => <Trail key={trail.id} trail={trail} {...this.props}/>)
+            searchResults.length ?
+              searchResults.map(trail => <Trail key={trail.id} trail={trail} {...this.props}/>) : 
+              <div className="no-results">
+                Sorry, no trails match your search!
+                <div className="endo"/>
+              </div>
           }
         </div>
 
