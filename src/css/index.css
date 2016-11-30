@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Raleway";
-  font-size: 23px;
+  font-size: 18px;
   background: #3b4f5a;
   color: #fff;
 }
@@ -14,7 +14,6 @@ input {
   padding: 8px;
   font-size: 20px;
 }
-
 input:focus,
 button:focus {
   outline: none;
@@ -48,18 +47,6 @@ a:hover {
   width: 100%;
 }
 
-.lightgrey {
-  background: #718087;
-}
-
-.darkgrey {
-  background: #213037;
-}
-
-.grey {
-  background: #3b4f5a;
-}
-
 .open {
   background: #5db956;
 }
@@ -72,14 +59,24 @@ a:hover {
   background-image: url('./images/trailfinder-logo.png');
   background-size: contain;
   background-repeat: no-repeat;
-  height: 109px;
-  width: 300px;
+  height: 98px;
+  width: 270px;
   margin: 10px auto 10px auto;
+}
+
+.endo {
+  background-image: url('./images/Endo.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 196px;
+  width: 200px;
+  margin: 10px auto;
 }
 
 .back-button {
   background-image: url('./images/Back.png');
   background-size: contain;
+  background-repeat: no-repeat;
   height: 55px;
   width: 50px;
   margin: 10px 20px 10px auto;
@@ -87,8 +84,10 @@ a:hover {
 
 .details-button {
   background-image: url('./images/Details.png');
-  height: 52px;
-  width: 48px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 48px;
+  width: 44px;
   float: right;
   margin: -5px 10px 0 0;
 }
@@ -96,21 +95,28 @@ a:hover {
 .update-button {
   background-image: url('./images/Update.png');
   background-size: contain;
-  height: 52px;
-  width: 48px;
+  background-repeat: no-repeat;
+  height: 48px;
+  width: 44px;
 }
 
 .directions-button {
   background-image: url('./images/Directions.png');
   background-size: contain;
-  height: 52px;
-  width: 48px;
+  background-repeat: no-repeat;
+  height: 48px;
+  width: 44px;
   float: left;
 }
 
 .search-box {
   margin: 15px 5%;
   width: 90%;
+}
+
+.no-results {
+  margin: 10px auto;
+  text-align: center;
 }
 
 .trail-summary {
@@ -122,10 +128,10 @@ a:hover {
 }
 
 .trail-header {
-  font-size: 28px;
+  font-size: 24px;
   color: white;
   background: #5db956;
-  padding: 10px 10px 10px 20px;
+  padding: 10px;
 }
 
 .trail-image {
@@ -133,27 +139,25 @@ a:hover {
 }
 
 .trail-image img {
-  height: 165px;
-  width: 165px;
+  height: 150px;
+  width: 151px;
 }
 
 .trail-description {
-  padding: 10px 10px 10px 175px;
+  padding: 10px 10px 10px 160px;
   background: #718087;
-  height: 165px;
-  max-height: 165px;
+  height: 150px;
+  max-height: 150px;
 }
 
 .link-panel {
   background: #213037;
   text-align: center;
-  /*height: 50px;*/
 }
 
 .update-link {
   margin-left: 5px;
   background: #3b4f5a;
-  float: left;
 }
 
 .directions-link {
@@ -173,7 +177,7 @@ a:hover {
 
 .update .status-cell {
   background: #213037;
-  width: 160px;
+  width: 140px;
   vertical-align: middle;
 }
 
@@ -199,7 +203,7 @@ a:hover {
   padding: 5px;
   border-radius: 5px;
   float: left;
-  margin: 25px;
+  margin: 23px;
 }
 
 .update .comment {
@@ -208,16 +212,17 @@ a:hover {
 
 .update .author {
   color: #5db956;
-  font-size: 18px;
-  font-weight: bold;  
+  font-size: 15px;
+  font-weight: bold;
   margin-top: 5px;
 }
 
 .add-update-wrapper {
   margin-top: 20px;
 }
+
 .add-update {
-  padding: 15px 20px;
+  padding: 15px 10px;
 }
 
 .add-update .comment {
@@ -241,6 +246,12 @@ a:hover {
   border: none;
 }
 
+@media only screen and (max-width: 450px) {
+  .add-update .submit {
+    padding: 16px 5px;
+  }
+}
+
 .detail-links {
   margin: 10px 0 20px 0;
 }
@@ -258,11 +269,11 @@ a:hover {
 .likes a:hover {
   color: #fff;
   text-decoration: none;
-  font-size: 29px;
+  font-size: 24px;
 }
 
 .likes-count {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .likes-heart {
@@ -315,7 +326,8 @@ a:hover {
 }
 
 .footer {
-  height: 50px;
+  font-size: 14px;
+  height: 40px;
   background-color: grey;
   color: white;
   padding: 10px;
