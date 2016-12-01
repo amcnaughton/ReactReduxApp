@@ -1,35 +1,17 @@
-/**
- * Return sorted updates for selected trail
- * 
- * @param {any} id
- * @param {any} updates
- * @returns array
- */
+// Return sorted updates for selected trail
 export function getTrailUpdates(id, updates, count) {
 	return updates
 		.filter(item => item.trail_id === +id)
 		.sort((a, b) => b.timestamp - a.timestamp).slice(0, count);
 }
 
-/**
- * Map trailId to array index
- * 
- * @param {any} trailId
- * @param {any} trails
- * @returns number
- */
+// Map trailId to array index
 export function getTrailIndex(trailId, trails) {
 	return trails
 		.map(trail => trail.id).indexOf(+trailId);
 }
 
-/**
- * The most recent trail update contains the trail open/closed status
- * 
- * @param {any} id
- * @param {any} updates
- * @returns boolean
- */
+// The most recent trail update contains the trail open/closed status
 export function isTrailOpen(id, updates) {
 
 	var results = updates
@@ -39,14 +21,7 @@ export function isTrailOpen(id, updates) {
 	return results
 }
 
-/**
- * Shorten a string with ...
- * 
- * @param {any} str
- * @param {any} n
- * @param {any} useWordBoundary
- * @returns string
- */
+// Shorten a string with ...
 export function truncate(str, n, useWordBoundary) {
 	var singular, tooLong = str.length > n;
 	useWordBoundary = useWordBoundary || true;
