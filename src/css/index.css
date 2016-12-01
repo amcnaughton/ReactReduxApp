@@ -271,11 +271,12 @@ a:hover {
   background-size: contain;
   font-size: 12px;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   color: #3b4f5a;
   left: 50%;
   top: 50%;
   pointer-events: none;
+  z-index: 1;
 }
 
 .likes-heart {
