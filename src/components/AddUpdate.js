@@ -1,11 +1,5 @@
 import React from 'react';
 
-/**
- * Allow user to update trail status and add comment
- * 
- * @class AddUpdate
- * @extends {React.Component}
- */
 class AddUpdate extends React.Component {
 
   constructor() {
