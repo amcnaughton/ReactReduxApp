@@ -16,6 +16,12 @@ const updates = [{
   "trail_id": 2,
   "user_id": 23,
   "status": "open"
+}, {
+  "comment": "Closed on Sunday during hunting season",
+  "timestamp": 1479393595,
+  "trail_id": 4,
+  "user_id": 23,
+  "status": "closed"
 }];
 
 export default updates;
