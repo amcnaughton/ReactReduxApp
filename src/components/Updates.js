@@ -24,7 +24,7 @@ class Updates extends React.Component {
           <div className="table-cell comment-cell">
               <div className="comment">{truncate(update.comment, 50)}
                 <div className="author">
-                  {user.name} {timestamp.format("MM/DD/YY, h:mm a")}
+                  {user.name} {timestamp.format("MM/DD, h:mm a")}
                 </div>
               </div>
           </div>
