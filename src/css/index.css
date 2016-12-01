@@ -14,6 +14,7 @@ input {
   padding: 8px;
   font-size: 20px;
 }
+
 input:focus,
 button:focus {
   outline: none;
@@ -37,10 +38,6 @@ a:hover {
   display: table-cell;
 }
 
-.vtop {
-  vertical-align: top;
-}
-
 .container {
   padding: 0;
   margin: 0;
@@ -56,57 +53,36 @@ a:hover {
 }
 
 .logo {
-  background-image: url('./images/trailfinder-logo.png');
+  background: url('./images/trailfinder-logo.png') no-repeat;
   background-size: contain;
-  background-repeat: no-repeat;
   height: 98px;
   width: 270px;
   margin: 10px auto 10px auto;
 }
 
 .endo {
-  background-image: url('./images/Endo.jpg');
+  background: url('./images/Endo.jpg') no-repeat;
   background-size: contain;
-  background-repeat: no-repeat;
   height: 196px;
   width: 200px;
   margin: 10px auto;
 }
 
 .back-button {
-  background-image: url('./images/Back.png');
+  background: url('./images/Back.png') no-repeat;
   background-size: contain;
-  background-repeat: no-repeat;
   height: 55px;
   width: 50px;
   margin: 10px 20px 10px auto;
 }
 
 .details-button {
-  background-image: url('./images/Details.png');
+  background: url('./images/Details.png') no-repeat;
   background-size: contain;
-  background-repeat: no-repeat;
   height: 48px;
   width: 44px;
   float: right;
   margin: -5px 10px 0 0;
-}
-
-.update-button {
-  background-image: url('./images/Update.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 48px;
-  width: 44px;
-}
-
-.directions-button {
-  background-image: url('./images/Directions.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 48px;
-  width: 44px;
-  float: left;
 }
 
 .search-box {
@@ -140,7 +116,7 @@ a:hover {
 
 .trail-image img {
   height: 150px;
-  width: 151px;
+  width: 150px;
 }
 
 .trail-description {
@@ -151,18 +127,32 @@ a:hover {
 }
 
 .link-panel {
-  background: #213037;
-  text-align: center;
+  line-height: 48px;
+  width: 330px;
+  margin: auto;
 }
 
 .update-link {
-  margin-left: 5px;
-  background: #3b4f5a;
+  float: left;
 }
 
 .directions-link {
-  margin-left: 5px;
-  background: #3b4f5a;
+  margin-left: 20px;
+  float: left;
+}
+
+.update-link a,
+.directions-link a {
+  background: url('./images/Update.png') no-repeat left center;
+  padding-left: 50px;
+  background-size: 48px 44px;
+  min-height: 48px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.directions-link a {
+  background: url('./images/Directions.png') no-repeat left center;
 }
 
 .update {
@@ -325,6 +315,10 @@ a:hover {
   height: 100% !important;
 }
 
+
+.footer-spacer {
+  height: 40px;
+}
 .footer {
   font-size: 14px;
   height: 40px;
